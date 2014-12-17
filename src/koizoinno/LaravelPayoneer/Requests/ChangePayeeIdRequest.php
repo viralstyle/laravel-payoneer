@@ -23,7 +23,6 @@ class ChangePayeeIdRequest extends BaseRequest implements RequestInterface {
      */
     public function __construct($oldId, $newId)
     {
-        parent::__construct();
         $this->parameters['p4'] = $oldId;
         $this->parameters['p5'] = $newId;
     }

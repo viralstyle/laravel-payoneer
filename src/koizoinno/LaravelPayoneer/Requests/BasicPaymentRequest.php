@@ -22,7 +22,6 @@ class BasicPaymentRequest extends BaseRequest implements RequestInterface {
      */
     public function __construct($paymentId)
     {
-        parent::__construct();
         $this->parameters['p4'] = $paymentId;
     }
 

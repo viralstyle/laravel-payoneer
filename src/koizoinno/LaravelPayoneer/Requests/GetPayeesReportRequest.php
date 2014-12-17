@@ -30,7 +30,6 @@ class GetPayeesReportRequest extends BaseRequest implements RequestInterface {
      */
     public function __construct($startDate, $endDate)
     {
-        parent::__construct();
         $this->parameters['p5'] = $startDate;
         $this->parameters['p6'] = $endDate;
         $this->parameters['p4'] = self::REPORT_TYPE_XML;

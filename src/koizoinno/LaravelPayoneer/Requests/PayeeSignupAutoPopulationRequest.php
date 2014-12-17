@@ -38,7 +38,6 @@ class PayeeSignupAutoPopulationRequest extends BaseRequest implements RequestInt
         PartnerDetails $partnerDetails,
         PayeeDetails $payeeDetails
     ) {
-        parent::__construct();
         $this->partnerDetails    = $partnerDetails;
         $this->payeeDetails      = $payeeDetails;
         $this->parameters['xml'] = $this->buildXML();

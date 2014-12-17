@@ -24,7 +24,6 @@ class GetPaymentStatusRequest extends BaseRequest implements RequestInterface {
      */
     public function __construct($payeeId, $paymentId)
     {
-        parent::__construct();
         $this->parameters['p4'] = $payeeId;
         $this->parameters['p5'] = $paymentId;
     }

@@ -44,7 +44,6 @@ class PayeeSignupRequest extends BaseRequest implements RequestInterface {
         ),
         $achMode = PayoneerAPI::ACH_MODE_REGULAR
     ) {
-        parent::__construct();
         $this->parameters['p4']  = $payeeId;
         $this->parameters['p5']  = $sessionId;
         $this->parameters['p6']  = $redirectUrl;

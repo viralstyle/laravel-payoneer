@@ -22,7 +22,6 @@ class PayeeRequest extends BaseRequest implements RequestInterface {
      */
     public function __construct($payeeId)
     {
-        parent::__construct();
         $this->parameters['p4'] = $payeeId;
     }
 

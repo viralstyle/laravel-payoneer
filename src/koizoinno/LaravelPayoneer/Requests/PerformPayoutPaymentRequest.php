@@ -38,7 +38,6 @@ class PerformPayoutPaymentRequest extends BaseRequest implements RequestInterfac
         $groupId = null,
         $currency = null
     ) {
-        parent::__construct();
         $this->parameters['p4']       = $programId;
         $this->parameters['p5']       = $paymentId;
         $this->parameters['p6']       = $payeeId;
