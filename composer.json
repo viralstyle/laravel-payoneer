@@ -1,0 +1,24 @@
+{
+    "name": "koizoinno/laravel-payoneer",
+    "description": "Implementation of Payoneer API.",
+    "authors": [
+        {
+            "name": "Matt Snyder",
+            "email": "matt@obscurelogic.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "guzzle/guzzle": "v3.9.2"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "koizoinno\\LaravelPayoneer\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
