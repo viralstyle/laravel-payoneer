@@ -9,8 +9,6 @@
 namespace koizoinno\LaravelPayoneer\Requests;
 
 
-use koizoinno\LaravelPayoneer\PayoneerConfig;
-
 /**
  * Class BaseRequest
  * @package koizoinno\LaravelPayoneer\Requests
@@ -21,23 +19,6 @@ abstract class BaseRequest {
      * @var
      */
     public $parameters = [];
-
-    /**
-     * @var PayoneerConfig
-     */
-    public $config;
-
-
-    /**
-     *
-     */
-    public function __construct()
-    {
-        $this->config           = new PayoneerConfig();
-        $this->parameters['p1'] = $this->config->apiUser;
-        $this->parameters['p2'] = $this->config->apiPassword;
-        $this->parameters['p3'] = $this->config->partnerId;
-    }
 
     /**
      * @return array

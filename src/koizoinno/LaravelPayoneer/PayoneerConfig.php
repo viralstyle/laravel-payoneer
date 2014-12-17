@@ -47,4 +47,12 @@ class PayoneerConfig
         $this->partnerId = $partnerId;
     }
 
+    public function getParameterArray() {
+        return [
+            'p1' => $this->apiUser,
+            'p2' => $this->apiPassword,
+            'p3' => $this->partnerId
+        ];
+    }
+
 } 

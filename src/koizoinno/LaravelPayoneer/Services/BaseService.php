@@ -11,10 +11,21 @@ namespace koizoinno\LaravelPayoneer\Services;
 
 use GuzzleHttp\Client;
 use koizoinno\LaravelPayoneer\Contracts\RequestInterface;
+use koizoinno\LaravelPayoneer\PayoneerConfig;
 
 abstract class BaseService {
 
     protected $response;
+
+    protected $config;
+
+    /**
+     * @param $config
+     */
+    function __construct(PayoneerConfig $config)
+    {
+        $this->config = $config;
+    }
 
 
     /**
@@ -25,8 +36,8 @@ abstract class BaseService {
     public function call($methodName, RequestInterface $request)
     {
         $client     = new Client();
-        $url        = $request->config->apiEndpoint . '?mname=' . $methodName;
-        $parameters = $request->getParameterArray();
+        $url        = $this->config->apiEndpoint . '?mname=' . $methodName;
+        $parameters = array_merge($this->config->getParameterArray(), $request->getParameterArray());
 
         $response =  $client->post($url, $parameters);
 

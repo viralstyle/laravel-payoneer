@@ -21,6 +21,10 @@ use koizoinno\LaravelPayoneer\Requests\PerformPayoutPaymentRequest;
 use koizoinno\LaravelPayoneer\Services\BaseService;
 use SimpleXMLElement;
 
+/**
+ * Class PayoneerAPI
+ * @package koizoinno\LaravelPayoneer
+ */
 class PayoneerAPI extends BaseService {
 
     const PAYOUT_CARD = 'PrepaidCard';
@@ -31,6 +35,14 @@ class PayoneerAPI extends BaseService {
     const ACH_MODE_REGULAR = 'Regular';
     const ACH_MODE_EXPRESS = 'Express';
 
+    /**
+     * @param PayoneerConfig $config
+     */
+    function __construct(PayoneerConfig $config)
+    {
+        parent::__construct($config);
+        $this->config = $config;
+    }
 
     /**
      * The payee sign-up page URL is unique and is generated
