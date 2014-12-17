@@ -19,14 +19,14 @@ use koizoinno\LaravelPayoneer\PayoneerAPI;
 class PayeeSignupRequest extends BaseRequest implements RequestInterface {
 
     /**
-     * @param \koizoinno\LaravelPayoneer\PayoneerConfig $payeeId
-     * @param                                          $sessionId
-     * @param                                          $redirectUrl
-     * @param                                          $redirectTime
-     * @param                                          $testAccount
-     * @param                                          $xmlResponse
-     * @param array                                    $payoutMethods
-     * @param string                                   $achMode
+     * @param int    $payeeId
+     * @param        $sessionId
+     * @param        $redirectUrl
+     * @param        $redirectTime
+     * @param        $testAccount
+     * @param        $xmlResponse
+     * @param array  $payoutMethods
+     * @param string $achMode
      */
     function __construct(
         $payeeId,
