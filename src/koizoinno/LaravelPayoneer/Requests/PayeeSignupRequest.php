@@ -30,8 +30,8 @@ class PayeeSignupRequest extends BaseRequest implements RequestInterface {
      */
     function __construct(
         $payeeId,
-        $sessionId,
         $redirectUrl,
+        $sessionId = '',
         $redirectTime = '10',
         $testAccount = 'false',
         $xmlResponse = 'true',
