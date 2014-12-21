@@ -41,7 +41,6 @@ class PayoneerAPI extends BaseService {
     function __construct(PayoneerConfig $config)
     {
         parent::__construct($config);
-        $this->config = $config;
     }
 
     /**

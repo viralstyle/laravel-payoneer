@@ -25,9 +25,7 @@ abstract class BaseRequest {
      */
     public function getParameterArray()
     {
-        return [
-            'body' => $this->parameters
-        ];
+        return $this->parameters;
     }
 
 } 
