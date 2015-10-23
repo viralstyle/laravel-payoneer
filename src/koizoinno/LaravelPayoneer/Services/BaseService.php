@@ -38,8 +38,7 @@ abstract class BaseService {
         $client     = new Client();
         $url        = $this->config->apiEndpoint . '?mname=' . $methodName;
         $parameters = array_merge($this->config->getParameterArray(), $request->getParameterArray());
-
-        $response =  $client->post($url, ['body' => $parameters]);
+        $response =  $client->post($url, ['form_params' => $parameters]);
 
         return $response;
 
