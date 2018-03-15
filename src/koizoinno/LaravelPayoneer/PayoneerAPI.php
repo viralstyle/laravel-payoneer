@@ -12,6 +12,7 @@ namespace koizoinno\LaravelPayoneer;
 use koizoinno\LaravelPayoneer\Requests\BasicPaymentRequest;
 use koizoinno\LaravelPayoneer\Requests\BasicRequest;
 use koizoinno\LaravelPayoneer\Requests\ChangePayeeIdRequest;
+use koizoinno\LaravelPayoneer\Requests\ChargeAccountRequest;
 use koizoinno\LaravelPayoneer\Requests\GetPayeesReportRequest;
 use koizoinno\LaravelPayoneer\Requests\GetPaymentStatusRequest;
 use koizoinno\LaravelPayoneer\Requests\PayeeRequest;
@@ -189,6 +190,20 @@ class PayoneerAPI extends BaseService {
         $xml = simplexml_load_string($response->getBody()->getContents());
         return $this->xmlToArray($xml);
 
+    }
+
+    /**
+     * @param $payneerAccountId
+     * @param $amount
+     * @param null $description
+     * @return mixed
+     */
+    public function chargeAccount($payneerAccountId, $amount, $description = null)
+    {
+        $request = new ChargeAccountRequest($amount, $payneerAccountId, $description);
+        $response = $this->call('ChargeAccount', $request);
+        $xml = simplexml_load_string($response->getBody()->getContents());
+        return $this->xmlToArray($xml);
     }
 
     /**
